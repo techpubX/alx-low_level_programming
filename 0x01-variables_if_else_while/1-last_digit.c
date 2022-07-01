@@ -2,9 +2,10 @@
 #include <time.h>
 #include <stdio.h>
 
-/**
- * Return: 0
- */
+/* more headers goes there */
+
+/* betty */
+
 int main(void)
 {
 	int n;
