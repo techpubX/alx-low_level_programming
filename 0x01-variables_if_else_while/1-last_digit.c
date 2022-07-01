@@ -2,9 +2,11 @@
 #include <time.h>
 #include <stdio.h>
 
-/* more headers goes there */
+/**
+ * main - prints the last digit of n and prints out whether it is
+ * more headers goes there
 
-/* betty style doc for function main goes there */
+betty style doc for function main goes there */
 
 int main(void)
 {
