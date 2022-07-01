@@ -2,12 +2,12 @@
 #include <time.h>
 #include <stdio.h>
 
-/**
- * main - prints the last digit of n and prints out whether it is
- * more headers goes there
+/* main - prints the last digit of n and prints out whether it is
+ * greater than 5, 0, or less than 6
+ * Return: 0
+ */
 
-betty style doc for function main goes there */
-
+/* betty style doc for function main goes there */
 int main(void)
 {
 	int n;
