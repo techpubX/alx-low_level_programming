@@ -1,8 +1,10 @@
-#include "stdio.h"
+#include "main.h"
 /**
- *  * print_alphabet - Print alphabet in lowercase using only `_putchar`
- *   * Return: 0
- *    */
+ *  * print_alphabet - main
+ *   * function that prints alphabet in lowercase
+ *    * followed by new line
+ *     * Return: 0
+ *      */
 void print_alphabet(void)
 {
 		char c = 'a';
