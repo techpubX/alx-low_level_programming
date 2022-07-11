@@ -1,12 +1,13 @@
 #include "main.h"
 
 /**
- *   * do_half - Prints half of the string
+ *   * puts_half - Prints half of the string
  *     * @str: The string to print
  *       *
  *         * Return: void
- *           */
-void do_half(char *str)
+ *         
+ */
+void puts_half(char *str)
 {
 		int j = 0;
 			int k;
