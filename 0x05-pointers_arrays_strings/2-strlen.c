@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /* len returns the length
  * *for counts
