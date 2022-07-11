@@ -1,17 +1,19 @@
-#include "main.h"
+#include main.h"
 
-/* len returns the length
- * *for counts
- * * Retunr the length
- * */
+/**
+ *   * _strlen - Returns the length of a string
+ *     *
+ *       * Return: String length
+ *       
+ */
+int _strlen(char *s)
+{
+		int len = 0;
 
-int main() {
-	    char len[] = "omondi";
-	        int i;
+			for (; *s != '\0'; s++)
+					{
+								len++;
+									}
 
-		    for (i = 0; len[i] != '\0'; ++i);
-		        
-		        printf("%d", i);
-			    return 0;
+				return (len);
 }
-
