@@ -1,49 +1,61 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 /**
- *  * string_nconcat - len of 1st str, len of 2nd str, if n < 2nd, 2nd = n
- *   * 2nd + 1st = total len, malloc + null byte, loop to insert into temp arr
- *    * @s1: input one
- *     * @s2: input two
- *      * @n: s2's number of bytes
- *       * Return: 0
- *        */
+ * strlen_1 - function that returns the length of a string.
+ * @s: pointer to a char for the length.
+ * Return: i.
+ */
+unsigned int strlen_1(char *s)
+{
+	unsigned int i;
+
+	if (s == NULL)
+	{
+		return (0);
+	}
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	return (i);
+}
+/**
+ * string_nconcat - concatenates two strings
+ * @s1: first string.
+ * @s2: string to add to first one.
+ * @n: no. of bytes.
+ * Return: pointer to a newly allocated space in memory, null terminated.
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-		char *arr;
-			unsigned int i, j, co, co_2;
+	unsigned int i, j, len, str_len_2;
+	char *a;
 
-				if (s1 == NULL)
-							s1 = "";
-					if (s2 == NULL)
-								s2 = "";
+	str_len_2 = strlen_1(s2);
 
-						for (i = 0; s1[i] != '\0'; i++)
-								{
-										}
+	if (n >= str_len_2)
+	{
+		len = strlen_1(s1) + str_len_2 + 1;
+	}
+	else
+	{
+		len = strlen_1(s1) + n + 1;
+	}
 
-							for (j = 0; s2[j] != '\0'; j++)
-									{
-											}
+	a = malloc(len * sizeof(char));
 
-								if (n < j)
-											j = n;
+	if (!a)
+	{
+		return (NULL);
+	}
+	for (i = 0; s1 != NULL && s1[i]; i++)
+	{
+		a[i] = s1[i];
+	}
+	for (j = 0; s2 != NULL && s2[j] && j < n; j++)
+	{
+		a[i + j] = s2[j];
+	}
+	a[i + j] = '\0';
 
-									j += i;
-										arr = malloc(sizeof(char *) * (j + 1));
-
-											if (arr == NULL)
-														return (NULL);
-
-												for (co = 0; co < i; co++)
-															arr[co] = s1[co];
-													for (co_2 = 0; co < j; co_2++)
-															{
-																		arr[co] = s2[co_2];
-																				co++;
-																					}
-														co++;
-															arr[co] = '\0';
-																return (arr);
+	return (a);
 }
