@@ -1,30 +1,36 @@
 #include "3-calc.h"
-#include <string.h>
-
 /**
- *  * get_op_func - selects the correct operation toperform
- *   * @s: operation to perform
- *    *
- *     * Return: pointer to the correct function
- *      */
-int (*get_op_func(char *s))(int, int)
+ * main - Entry point
+ * @argc: the number of the parameters
+ * @argv: the parameters in the case the number to be calculated.
+(* a blank line
+* Description: this program is the enttry point for a calculator)?
+(* section header: 3-calc.h)*
+* Return: 0 in success
+*/
+int main(int argc, char *argv[])
 {
-		op_t ops[] = {
-					{"+", op_add},
-							{"-", op_sub},
-									{"*", op_mul},
-											{"/", op_div},
-													{"%", op_mod},
-															{NULL, NULL}
-						};
-			int i;
+	int n1, n2, result;
+	int (*p)(int, int);
 
-				i = 0;
-					while (ops[i].op != NULL)
-							{
-										if (strcmp(s, ops[i].op) == 0)
-														break;
-												i++;
-													}
-						return (ops[i].f);
+	if (argc < 4 || argc > 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[3]);
+
+	p = get_op_func(argv[2]);
+
+	if (p == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	result = p(n1, n2);
+
+	printf("%d\n", result);
+	return (0);
 }
